@@ -1,0 +1,99 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="bb-partners">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+      .card {
+        padding: 30px 30px 90px 30px;
+        background-color: #000000;
+        color: #ffffff;
+        font-size: 20px;
+      }
+
+      .card-header {
+        color: #ffffff;
+        font-size: 30px;
+      }
+
+      .flex-container {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        justify-content: center;
+        padding-left: 0px;
+        margin-top: 10%;
+      }
+
+      .flex-item {
+        display: inline-block;
+        min-width: 200px;
+      }
+
+      .card-container {
+        text-decoration: none;
+      }
+
+      @media all and (min-width: 600px) {
+        .flex-item {
+          flex: 1 0px;
+          display: block;
+        }
+      }
+
+    </style>
+
+    <div class="card">
+      <h1 class="card-header">Partners</h1>
+      <hr>
+      <ul class="flex-container">
+        <li class="flex-item">
+          <a href="#" class="card-container">
+            <paper-card image="/images/partner-logo.svg">
+            </paper-card>
+          </a>
+        </li>
+        <li class="flex-item">
+          <a href="#" class="card-container">
+            <paper-card image="/images/partner-logo.svg">
+            </paper-card>
+          </a>
+        </li>
+        <li class="flex-item">
+          <a href="#" class="card-container">
+            <paper-card image="/images/partner-logo.svg">
+            </paper-card>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </template>
+
+  <script>
+  class BbPartners extends Polymer.Element {
+    static get is() { return 'bb-partners'; }
+  }
+
+  window.customElements.define(BbPartners.is, BbPartners);
+  </script>
+</dom-module>

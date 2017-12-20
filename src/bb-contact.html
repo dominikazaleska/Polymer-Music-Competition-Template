@@ -1,0 +1,134 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/iron-form/iron-form.html">
+<link rel="import" href="../bower_components/paper-input/paper-input.html">
+<link rel="import" href="../bower_components/paper-input/paper-textarea.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-app.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-auth.html">
+<link rel="import" href="../bower_components/polymerfire/firebase-query.html">
+<link rel="import" href="shared-styles.html">
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+
+<dom-module id="bb-contact">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+        --paper-input-container-underline-disabled = true;
+      }
+
+      iron-input {
+        width: 97%;
+      }
+      input {
+        background-color: #ffffff00;
+        outline: none;
+        border: none;
+        font-size: 20px;
+        font-family: 'Open Sans Condensed';
+        width: 100%
+      }
+      iron-autogrow-textarea {
+        width: 96.5%;
+        border: none;
+      }
+
+      .card {
+        padding: 30px 30px 90px 30px;
+        background-color: #000000;
+        color: #ffffff;
+        font-size: 20px;
+      }
+
+      .card-header {
+        color: #ffffff;
+        font-size: 30px;
+      }
+
+      .e-mail-field {
+        background-color: rgba(255,255,255,0.30);
+        color: #ffffff;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+      }
+      .message-field {
+        background-color: rgba(255,255,255,0.30);
+        color: #ffffff;
+        min-height: 180px;
+        margin-bottom: 25px;
+      }
+
+      .send-button {
+        background-color: #ffffff;
+        color: #000000;
+        height: 50px;
+        border-radius: 0;
+        float: right;
+        margin-bottom: 10px;
+        font-family: 'Open Sans Condensed', sans-serif;
+      }
+
+    </style>
+
+    <div class="card">
+      <h1 class="card-header">Contact us</h1>
+      <p>Additional text here...</p>
+      <form is="iron-form" id="redirectDemo">
+        <iron-input type="email" id="email" class="e-mail-field" name="e-mail" label="E-mail" placeholder="E-mail" required no-label-float slot="input">
+          <input placeholder="E-mail">
+        </iron-input>
+        <iron-autogrow-textarea id="message" class="message-field" name="message" placeholder="Message">
+          <div></div>
+        </iron-autogrow-textarea>
+        <paper-button id="button" class="send-button" raised on-tap="add">Send</paper-button>
+      </form>
+    </div>
+    <firebase-app
+      auth-domain=""
+      database-url=""
+      api-key=""
+      storage-bucket=""
+      messaging-sender-id="">
+    </firebase-app>
+    <firebase-query
+      id="query"
+      path="/queries"
+      data="{{queries}}">
+    </firebase-query>
+  </template>
+
+  <script>
+    class BbContact extends Polymer.Element {
+      static get is() { return 'bb-contact'; }
+
+      static get properties() {
+        return {
+          queries: {
+            type: Object
+          }
+        }
+      }
+      add(e) {
+        this.$.query.ref.push({
+          email: this.$.email.value,
+          message: this.$.message.value
+
+        });
+        this.$.email.value = null;
+        this.$.message.value = null;
+      }
+    }
+    window.customElements.define(BbContact.is, BbContact);
+  </script>
+</dom-module>

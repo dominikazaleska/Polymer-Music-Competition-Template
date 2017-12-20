@@ -1,0 +1,97 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="bb-team">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+      paper-card {
+        background-color: #000000;
+        display: flex;
+        justify-content: center;
+      }
+
+      .card {
+        padding: 30px 30px 90px 30px;
+        background-color: #000000;
+        color: #ffffff;
+        font-size: 20px;
+      }
+
+      .card-header {
+        color: #ffffff;
+        font-size: 30px;
+      }
+
+      .org-info-container {
+        display: block;
+        position: relative;
+        max-width: 1500px;
+        margin: 5px auto;
+      }
+
+      .org-image-container {
+        display: block;
+        width: 49%;
+        text-decoration: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+      }
+
+      .org-description-container {
+        display: block;
+        width: 100%;
+        text-decoration: none;
+        text-align: justify;
+      }
+
+      .org-description {
+        text-align: justify;
+      }
+
+    </style>
+
+    <div class="card">
+      <h1 class="card-header">Organisers</h1>
+      <hr>
+      <div class="org-image-container">
+        <paper-card class="image-card" image="https://images.unsplash.com/photo-1501238295340-c810d3c156d2?auto=format&fit=crop&w=1500&q=80">
+        </paper-card>
+      </div>
+      <div class="org-info-container">
+        <div class="org-description-container">
+          <paper-card>
+            <div class="card-content">
+              <p class="org-description">Organiser description here ...</p>
+            </div>
+          </paper-card>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <script>
+  class BbTeam extends Polymer.Element {
+    static get is() { return 'bb-team'; }
+  }
+
+  window.customElements.define(BbTeam.is, BbTeam);
+  </script>
+</dom-module>

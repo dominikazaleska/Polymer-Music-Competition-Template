@@ -1,0 +1,65 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/google-youtube/google-youtube.html">
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="bb-lastedition">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+
+        padding: 10px;
+      }
+
+      paper-card {
+        background-color: #000000;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .card {
+        padding: 30px 30px 90px 30px;
+        background-color: #000000;
+        color: #ffffff;
+        font-size: 20px;
+      }
+
+      .card-header {
+        color: #ffffff;
+        font-size: 30px;
+      }
+
+    </style>
+
+    <div class="card">
+      <h1 class="card-header">Last Edition</h1>
+      <hr>
+      <paper-carousel items="1" dotText="false">
+      	<img src="https://images.unsplash.com/photo-1491438590914-bc09fcaaf77a?auto=format&fit=crop&w=1500&q=80" draggable="false"/>
+      	<img src="https://images.unsplash.com/photo-1429962714451-bb934ecdc4ec?auto=format&fit=crop&w=1500&q=80" draggable="false"/>
+      	<img src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1500&q=80" draggable="false"/>
+      </paper-carousel>
+    </div>
+
+  </template>
+
+  <script>
+    class BbLastedition extends Polymer.Element {
+      static get is() { return 'bb-lastedition'; }
+    }
+    window.customElements.define(BbLastedition.is, BbLastedition);
+  </script>
+</dom-module>

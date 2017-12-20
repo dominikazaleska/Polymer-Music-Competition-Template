@@ -1,0 +1,138 @@
+<!--
+@license
+Copyright (c) 2016 The Polymer Project Authors. All rights reserved.
+This code may only be used under the BSD style license found at http://polymer.github.io/LICENSE.txt
+The complete set of authors may be found at http://polymer.github.io/AUTHORS.txt
+The complete set of contributors may be found at http://polymer.github.io/CONTRIBUTORS.txt
+Code distributed by Google as part of the polymer project is also
+subject to an additional IP rights grant found at http://polymer.github.io/PATENTS.txt
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer-element.html">
+
+<link rel="import" href="../bower_components/app-route/app-location.html">
+<link rel="import" href="../bower_components/app-route/app-route.html">
+
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/iron-pages/iron-pages.html">
+<link rel="import" href="../bower_components/iron-selector/iron-selector.html">
+
+<link rel="import" href="../bower_components/paper-listbox/paper-listbox.html">
+<link rel="import" href="../bower_components/paper-card/paper-card.html">
+<link rel="import" href="../bower_components/paper-fab/paper-fab.html">
+<link rel="import" href="../bower_components/google-youtube/google-youtube.html">
+
+<link rel="import" href="../bower_components/app-layout/app-drawer-layout/app-drawer-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-drawer/app-drawer.html">
+<link rel="import" href="../bower_components/app-layout/app-header-layout/app-header-layout.html">
+<link rel="import" href="../bower_components/app-layout/app-header/app-header.html">
+<!--<link rel="import" href="../bower_components/app-layout/app-scrollpos-control/app-scrollpos-control.html">-->
+<link rel="import" href="../bower_components/app-layout/app-scroll-effects/effects/waterfall.html">
+<link rel="import" href="../bower_components/polymer/lib/elements/dom-repeat.html">
+
+<link rel="import" href="shared-styles.html">
+
+<dom-module id="bb-bands">
+  <template>
+    <style include="shared-styles">
+      :host {
+        display: block;
+        padding: 10px;
+      }
+
+      h1 {
+        color: white;
+      }
+
+      paper-card {
+        width: 300px;
+        background-color: black;
+        color: white;
+        font-family: 'Open Sans Condensed', sans-serif;
+        margin-bottom: 10px;
+      }
+
+      paper-fab {
+        background-color: #ffffff;
+        color: #000000;
+        margin-left: auto;
+        margin-right: 0px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .card-content {
+        padding: 0px;
+      }
+
+      .card-middle {
+        padding: 20px;
+      }
+
+      .band-votes {
+        font-size: 20px;
+      }
+
+      .clicked {
+        background-color: #ffffff70;
+        color: #ffffff;
+      }
+
+    </style>
+
+    <template is="dom-repeat" items="{{bands}}" observe="votes">
+      <paper-card>
+        <div class="card-content">
+          <google-youtube video-id="{{item.videoid}}"
+                width="300px"
+                height="200px"
+                thumbnail="{{item.thumbnail}}">
+          </google-youtube>
+          <div class="card-middle">
+            <h1>{{item.name}}</h1>
+            <p class="band-description">{{item.description}}</p>
+            <p class="band-votes">Votes: <span><b>{{item.votes}}</b></span></p>
+            <paper-fab id="{{item.id}}" on-tap="handleClick" icon="check"></paper-fab>
+          </div>
+        </div>
+      </paper-card>
+    </template>
+
+  </template>
+
+  <script>
+  class BbBands extends Polymer.GestureEventListeners(Polymer.Element) {
+    static get is() { return 'bb-bands'; }
+
+    static get properties() {
+      return {
+        bands: {
+          type: Array,
+          value() {
+            return [
+              {id: 'button0', name: 'Mops', description: 'Joining Hip-Hop, metal and progressive rock with polish texts in the energising show.', votes: 0, videoid: 'gNzxJSBkXgA', thumbnail: 'https://firebasestorage.googleapis.com/v0/b/bandsbattle-63071.appspot.com/o/mops.png?alt=media&token=c0c17b4e-64f5-4208-91a2-b229abac2ddd'},
+              {id: 'button1', name: 'Tom Sawyer', description: 'The mix of classic rock with hammonds sound and electric guitar. Blues Rock improvising.', votes: 0, videoid: '6xVquQtC7jA', thumbnail: 'https://firebasestorage.googleapis.com/v0/b/bandsbattle-63071.appspot.com/o/tom-sawyer.png?alt=media&token=3c604b59-068b-418a-b6c2-a674949370c9'},
+              {id: 'button2', name: 'Raincoat', description: 'Silesia group playing music on the boundary of rock and metal, joining 5 different temperaments.', votes: 0, videoid: 'spFRimSTXkY', thumbnail: 'https://firebasestorage.googleapis.com/v0/b/bandsbattle-63071.appspot.com/o/raincoat.png?alt=media&token=3ae320b1-9e91-4bcc-8cf3-696519c8a23d'},
+              {id: 'button3', name: 'Mith', description: 'Clear bass and guitar sound, sharp guitar and women strong vocal, playing with passion.', votes: 0, videoid: 'dOkOc4uCxzY', thumbnail: 'https://firebasestorage.googleapis.com/v0/b/bandsbattle-63071.appspot.com/o/mith.png?alt=media&token=632c2ca9-dba0-4dda-a208-89247c1b7bd9'},
+              {id: 'button4', name: 'WARBAND', description: 'Too light for death, to heavy for heavy - metal. The only sure thing is that they play loud.', votes: 0, videoid: 'mVvx0bIV4G0', thumbnail: 'https://firebasestorage.googleapis.com/v0/b/bandsbattle-63071.appspot.com/o/warband.png?alt=media&token=36b164d9-9701-4f48-a2e3-6c9cb3b7f59b'},
+              {id: 'button5', name: 'Rusty Pine', description: 'Founded by siblings. Mixing blues, country and folk with acoustic guitar sounds.', votes: 0, videoid: 'QHb7EAI0Ivw', thumbnail: 'https://firebasestorage.googleapis.com/v0/b/bandsbattle-63071.appspot.com/o/rusty-pine.png?alt=media&token=44df11e6-540f-4d9e-84f5-1ae239eba9ed'},
+              {id: 'button6', name: 'Tom Sawyer', description: 'The mix of classic rock with hammonds sound and electric guitar. Blues Rock improvising.', votes: 0, videoid: '6xVquQtC7jA', thumbnail: 'https://firebasestorage.googleapis.com/v0/b/bandsbattle-63071.appspot.com/o/tom-sawyer.png?alt=media&token=3c604b59-068b-418a-b6c2-a674949370c9'},
+              {id: 'button7', name: 'Skylight', description: 'Alternative music combined with hard rock. Recording at home makes their music unique.', votes: 0, videoid: '77zBDit99m4', thumbnail: 'https://firebasestorage.googleapis.com/v0/b/bandsbattle-63071.appspot.com/o/skylight.png?alt=media&token=087a3f1a-6ab9-4d6a-ac2c-319a65836708'},
+              {id: 'button8', name: 'WARBAND', description: 'Too light for death, to heavy for heavy - metal. The only sure thing is that they play loud.', votes: 0, videoid: 'mVvx0bIV4G0', thumbnail: 'https://firebasestorage.googleapis.com/v0/b/bandsbattle-63071.appspot.com/o/warband.png?alt=media&token=36b164d9-9701-4f48-a2e3-6c9cb3b7f59b'},
+            ];
+          }
+        }
+      }
+    }
+    handleClick(e) {
+          let noYellowClassApplied = Array.from(e.srcElement.classList).indexOf('yellow') === -1;
+          if(noYellowClassApplied) {
+            e.srcElement.classList.add('clicked');
+          }
+          e.model.item.votes += 1;
+          e.model.notifyPath('item.votes');
+    }
+  }
+  window.customElements.define(BbBands.is, BbBands);
+  </script>
+</dom-module>

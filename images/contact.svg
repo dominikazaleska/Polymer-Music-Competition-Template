@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="400px" height="350px" viewBox="0 0 400 350" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.1 (33804) - http://www.bohemiancoding.com/sketch -->
+    <title>kontakt</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="kontakt" stroke-width="5" stroke="#FFFFFF">
+            <g id="ic_email_black_24px" transform="translate(135.000000, 123.000000)">
+                <g id="Group">
+                    <path d="M117,0 L13,0 C5.85,0 0.065,5.85 0.065,13 L0,91 C0,98.15 5.85,104 13,104 L117,104 C124.15,104 130,98.15 130,91 L130,13 C130,5.85 124.15,0 117,0 L117,0 Z M117,26 L65,58.5 L13,26 L13,13 L65,45.5 L117,13 L117,26 L117,26 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

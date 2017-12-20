@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="367px" height="266px" viewBox="0 0 367 266" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="background: #000000;">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard">
+            <g id="Group" transform="translate(10.000000, 10.000000)">
+                <path d="M1.93645979,244.214308 C0.72959273,242.812001 0,240.986965 0,238.992096 L0,8.00790397 C0,6.01197576 0.728309894,4.18659683 1.93454823,2.78433995 L172.634036,123.5 L1.93645979,244.214308 Z M2.64392299,244.938791 L173.5,124.112394 L344.358098,244.94022 C342.940093,246.220559 341.060758,247 338.996219,247 L8.00378145,247 C5.94226343,247 4.06278169,246.219856 2.64392299,244.938791 Z M344.356077,2.06120875 L173.5,122.887606 L2.64190208,2.0597796 C4.05990688,0.779440574 5.93924184,0 8.00378145,0 L338.996219,0 C341.057737,0 342.937218,0.780144144 344.356077,2.06120875 Z M345.06354,2.78569177 C346.270407,4.18799934 347,6.01303517 347,8.00790397 L347,238.992096 C347,240.988024 346.27169,242.813403 345.065452,244.21566 L174.365964,123.5 L345.06354,2.78569177 Z" id="Combined-Shape" fill="#FFFFFF" opacity="0.5"></path>
+                <rect id="Rectangle-2" fill="#000000" x="82" y="94" width="184" height="60" rx="17"></rect>
+                <text id="Partner-Logo" font-family="OpenSans-CondensedLight, Open Sans" font-size="24" font-style="condensed" font-weight="300" fill="#808080">
+                    <tspan x="124.099609" y="130">Partner Logo</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

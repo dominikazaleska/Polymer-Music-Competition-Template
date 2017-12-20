@@ -1,0 +1,101 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/bb-app.html",
+  "fragments": [
+    "src/bb-home.html",
+    "src/bb-contact.html",
+    "src/bb-about.html",
+    "src/bb-team.html",
+    "src/bb-lastedition.html",
+    "src/bb-partners.html",
+    "src/bb-termsheet.html",
+    "src/bb-bands.html",
+    "src/bb-view404.html"
+  ],
+  "sources": [
+    "src/**/*",
+    "images/**/*",
+    "bower.json",
+    "index.html",
+    "src/bb-app.html",
+    "src/bb-home.html",
+    "src/bb-contact.html",
+    "src/bb-about.html",
+    "src/bb-team.html",
+    "src/bb-lastedition.html",
+    "src/bb-partners.html",
+    "src/bb-termsheet.html",
+    "src/bb-bands.html",
+    "src/bb-view404.html"
+  ],
+  "extraDependencies": [
+    "bower_components/webcomponentsjs/*.js",
+    "manifest.json",
+    "bower_components/webcomponentsjs/*.js"
+  ],
+  "builds": [
+    {
+      "name": "es5-bundled",
+      "js": {
+        "minify": true,
+        "compile": true
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true,
+      "addPushManifest": true,
+      "preset": "es5-bundled"
+    },
+    {
+      "name": "es6-bundled",
+      "browserCapabilities": [
+        "es2015"
+      ],
+      "js": {
+        "minify": true,
+        "compile": false
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": true,
+      "addServiceWorker": true,
+      "addPushManifest": true,
+      "preset": "es6-bundled"
+    },
+    {
+      "name": "es6-unbundled",
+      "browserCapabilities": [
+        "es2015",
+        "push"
+      ],
+      "js": {
+        "minify": true,
+        "compile": false
+      },
+      "css": {
+        "minify": true
+      },
+      "html": {
+        "minify": true
+      },
+      "bundle": false,
+      "addServiceWorker": true,
+      "addPushManifest": true,
+      "preset": "es6-unbundled"
+    }
+  ],
+  "lint": {
+    "rules": [
+      "polymer-2"
+    ]
+  }
+}

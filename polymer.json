@@ -1,0 +1,38 @@
+{
+  "entrypoint": "index.html",
+  "shell": "src/bb-app.html",
+  "fragments": [
+    "src/bb-home.html",
+    "src/bb-contact.html",
+    "src/bb-about.html",
+    "src/bb-team.html",
+    "src/bb-lastedition.html",
+    "src/bb-partners.html",
+    "src/bb-termsheet.html",
+    "src/bb-bands.html",
+    "src/bb-view404.html"
+  ],
+  "sources": [
+    "src/**/*",
+    "images/**/*",
+    "bower.json"
+  ],
+  "extraDependencies": [
+    "manifest.json",
+    "bower_components/webcomponentsjs/*.js"
+  ],
+  "lint": {
+    "rules": ["polymer-2"]
+  },
+  "builds": [
+    {
+      "preset": "es5-bundled"
+    },
+    {
+      "preset": "es6-bundled"
+    },
+    {
+      "preset": "es6-unbundled"
+    }
+  ]
+}
